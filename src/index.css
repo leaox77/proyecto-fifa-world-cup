@@ -1,0 +1,772 @@
+/* ============================================
+   FIFA WORLD CUP 2026 - OFFICIAL BRAND STYLES
+   Basado en la identidad visual oficial
+   Colores: Blanco, Negro, Oro, Rojo, Azul, Verde
+   ============================================ */
+
+:root {
+  /* Colores oficiales del branding 2026 */
+  --wc-white:    #FFFFFF;
+  --wc-black:    #000000;
+  --wc-gold:     #D4AF37;
+  --wc-gold-light: #F5E6A3;
+  --wc-red:      #E61D25;    /* Torch Red - oficial [citation:3] */
+  --wc-blue:     #2A398D;    /* Hermes - oficial [citation:3] */
+  --wc-green:    #3CAC3B;    /* Average Green - oficial [citation:3] */
+  --wc-gray:     #474A4A;    /* Dark Heather Grey [citation:3] */
+  --wc-gray-light: #D1D4D1;  /* Light Gray [citation:3] */
+  
+  /* Colores de acento del álbum Panini */
+  --wc-yellow:   #FFD700;
+  --wc-orange:   #FF6B00;
+  
+  /* Efectos */
+  --card-radius: 12px;
+  --nav-height: 70px;
+  --box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--wc-white);
+  color: var(--wc-black);
+  min-height: 100vh;
+}
+
+h1, h2, h3, .display-font {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   NAVBAR - Estilo trofeo 2026
+   ============================================ */
+.wc-navbar {
+  background: var(--wc-white);
+  border-bottom: 3px solid var(--wc-gold);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+}
+
+.wc-navbar .navbar-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--wc-black) !important;
+  letter-spacing: 0.03em;
+}
+
+.wc-navbar .navbar-brand span {
+  color: var(--wc-gold);
+}
+
+.wc-navbar .nav-link {
+  color: var(--wc-gray) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.wc-navbar .nav-link:hover,
+.wc-navbar .nav-link.active {
+  color: var(--wc-gold) !important;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.wc-navbar .navbar-toggler {
+  border-color: var(--wc-gray-light);
+}
+.wc-navbar .navbar-toggler-icon {
+  filter: invert(0);
+}
+
+/* ============================================
+   RAINBOW STRIPE - Franja multicolor oficial del álbum
+   Rojo, Azul, Amarillo, Verde como en la portada Panini [citation:2][citation:6]
+   ============================================ */
+.rainbow-stripe {
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--wc-red) 0%,
+    var(--wc-blue) 25%,
+    var(--wc-yellow) 50%,
+    var(--wc-green) 75%,
+    var(--wc-red) 100%
+  );
+}
+
+/* ============================================
+   HERO BANNER - Estilo portada oficial Panini
+   Fondo blanco con trofeo 2026
+   ============================================ */
+.hero-banner {
+  background: linear-gradient(135deg, var(--wc-white) 0%, #f8f8f8 100%);
+  padding: 70px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Número 26 gigante de fondo - como en la identidad oficial */
+.hero-banner::before {
+  content: '26';
+  position: absolute;
+  right: -5%;
+  top: -15%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(180px, 25vw, 400px);
+  color: rgba(0,0,0,0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+}
+
+/* Patrón de círculos y cuadrados (referencia al diseño de 48 unidades) [citation:1] */
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--wc-red) 0px,
+    var(--wc-red) 20px,
+    var(--wc-blue) 20px,
+    var(--wc-blue) 40px,
+    var(--wc-yellow) 40px,
+    var(--wc-yellow) 60px,
+    var(--wc-green) 60px,
+    var(--wc-green) 80px
+  );
+}
+
+.hero-banner h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  color: var(--wc-black);
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.hero-banner h1 span {
+  color: var(--wc-gold);
+  background: none;
+  -webkit-text-fill-color: var(--wc-gold);
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  color: var(--wc-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+/* ============================================
+   STAT CARDS - Estilo tarjetas de colección
+   ============================================ */
+.stat-card {
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
+  border-color: var(--wc-gold);
+}
+
+.stat-card .stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.stat-card .stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--wc-gray);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Colores para las stats */
+.stat-card.red   .stat-number { color: var(--wc-red); }
+.stat-card.green .stat-number { color: var(--wc-green); }
+.stat-card.yellow .stat-number { color: var(--wc-gold); }
+.stat-card.blue  .stat-number { color: var(--wc-blue); }
+.stat-card.purple .stat-number { color: #7B2FBE; }
+
+/* ============================================
+   PROGRESS BAR - Estilo dorado
+   ============================================ */
+.wc-progress {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--wc-gray-light);
+  overflow: hidden;
+}
+
+.wc-progress-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--wc-gold), var(--wc-gold-light));
+  transition: width 0.5s ease;
+}
+
+/* ============================================
+   FIGURITA CARD - Estilo sticker Panini
+   ============================================ */
+.figurita-card {
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.figurita-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow);
+}
+
+.figurita-card.obtenida {
+  border: 2px solid var(--wc-gold);
+  box-shadow: 0 0 0 1px var(--wc-gold);
+}
+
+.figurita-card.faltante {
+  border-color: var(--wc-gray-light);
+  opacity: 0.85;
+}
+
+.figurita-img-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.figurita-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.figurita-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--wc-gray-light);
+  font-size: 3rem;
+  background: #f0f0f0;
+}
+
+.figurita-badge-num {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--wc-white);
+  color: var(--wc-black);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--wc-gray-light);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.figurita-fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  color: var(--wc-gray);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.figurita-fav-btn:hover,
+.figurita-fav-btn.active {
+  color: var(--wc-red);
+  background: var(--wc-white);
+  border-color: var(--wc-red);
+}
+
+.figurita-status-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.figurita-status-badge.obtenida {
+  background: var(--wc-green);
+  color: var(--wc-white);
+}
+
+.figurita-status-badge.faltante {
+  background: var(--wc-gray);
+  color: var(--wc-white);
+}
+
+.figurita-info {
+  padding: 10px 12px 12px;
+  background: var(--wc-white);
+}
+
+.figurita-info .player-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: var(--wc-black);
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.figurita-info .team-name {
+  font-size: 0.7rem;
+  color: var(--wc-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Botón toggle estado */
+.btn-toggle-state {
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-top: 1px solid var(--wc-gray-light);
+}
+
+.btn-toggle-state.marcar {
+  background: rgba(60, 172, 59, 0.1);
+  color: var(--wc-green);
+}
+
+.btn-toggle-state.marcar:hover {
+  background: rgba(60, 172, 59, 0.2);
+}
+
+.btn-toggle-state.quitar {
+  background: rgba(230, 29, 37, 0.08);
+  color: var(--wc-red);
+}
+
+.btn-toggle-state.quitar:hover {
+  background: rgba(230, 29, 37, 0.15);
+}
+
+/* ============================================
+   SEARCH & FILTERS
+   ============================================ */
+.wc-search-wrap {
+  position: relative;
+}
+
+.wc-search-wrap .fa-search {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--wc-gray);
+  font-size: 0.85rem;
+}
+
+.wc-search {
+  background: var(--wc-white) !important;
+  border: 1px solid var(--wc-gray-light) !important;
+  color: var(--wc-black) !important;
+  padding-left: 38px !important;
+  border-radius: 30px !important;
+  font-size: 0.9rem;
+}
+
+.wc-search::placeholder { 
+  color: var(--wc-gray-light); 
+}
+
+.wc-search:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3) !important;
+  border-color: var(--wc-gold) !important;
+}
+
+/* Filter chips */
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  color: var(--wc-gray);
+  border-radius: 30px;
+  padding: 5px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.chip:hover,
+.chip.active {
+  background: var(--wc-gold);
+  border-color: var(--wc-gold);
+  color: var(--wc-white);
+}
+
+/* ============================================
+   TEAM CARDS
+   ============================================ */
+.team-card {
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.team-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--wc-gold);
+  box-shadow: var(--box-shadow);
+}
+
+.team-card.selected {
+  border: 2px solid var(--wc-gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.team-flag {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.team-name-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  color: var(--wc-black);
+}
+
+.team-mini-progress {
+  margin-top: 12px;
+}
+
+/* Team Detail Panel */
+.team-detail-panel {
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  box-shadow: var(--box-shadow);
+}
+
+.team-detail-panel h2 {
+  font-size: 2.2rem;
+  color: var(--wc-black);
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--wc-black);
+  letter-spacing: 0.02em;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--wc-gold);
+  margin-bottom: 25px;
+}
+
+.section-title span {
+  color: var(--wc-gold);
+}
+
+/* ============================================
+   MODAL - Agregar figurita
+   ============================================ */
+.wc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.wc-modal {
+  background: var(--wc-white);
+  border: 1px solid var(--wc-gray-light);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--box-shadow);
+}
+
+.wc-modal h3 {
+  font-size: 1.6rem;
+  color: var(--wc-black);
+  margin-bottom: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.wc-input {
+  background: var(--wc-white) !important;
+  border: 1px solid var(--wc-gray-light) !important;
+  color: var(--wc-black) !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem;
+}
+
+.wc-input::placeholder { 
+  color: var(--wc-gray-light); 
+}
+
+.wc-input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25) !important;
+  border-color: var(--wc-gold) !important;
+}
+
+.wc-select {
+  background: var(--wc-white) !important;
+  border: 1px solid var(--wc-gray-light) !important;
+  color: var(--wc-black) !important;
+  border-radius: 8px !important;
+}
+
+.wc-select option {
+  background: var(--wc-white);
+  color: var(--wc-black);
+}
+
+/* ============================================
+   BUTTONS - Estilo dorado oficial
+   ============================================ */
+.btn-wc-primary {
+  background: linear-gradient(135deg, var(--wc-gold), var(--wc-gold-light));
+  color: var(--wc-black);
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 30px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.btn-wc-primary:hover { 
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-wc-primary:active { 
+  transform: translateY(0);
+}
+
+.btn-wc-secondary {
+  background: var(--wc-white);
+  color: var(--wc-gray);
+  border: 1px solid var(--wc-gray-light);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 30px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-wc-secondary:hover { 
+  background: var(--wc-gray-light);
+  color: var(--wc-black);
+}
+
+/* ============================================
+   LOADING SCREEN - Estilo 2026
+   ============================================ */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--wc-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  color: var(--wc-black);
+  line-height: 1;
+  text-align: center;
+}
+
+.loading-logo span {
+  color: var(--wc-gold);
+  background: none;
+  -webkit-text-fill-color: var(--wc-gold);
+}
+
+.loading-bar-track {
+  width: 200px;
+  height: 4px;
+  background: var(--wc-gray-light);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--wc-gold), var(--wc-gold-light));
+  animation: loadProgress 1.6s ease forwards;
+}
+
+@keyframes loadProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* ============================================
+   FORM LABELS
+   ============================================ */
+.label-form {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--wc-gray);
+  margin-bottom: 6px;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--wc-gray);
+}
+
+.empty-state i { 
+  font-size: 3rem; 
+  margin-bottom: 16px;
+  color: var(--wc-gray-light);
+}
+.empty-state p { 
+  font-size: 0.9rem; 
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .hero-banner { 
+    padding: 40px 0 36px; 
+  }
+  .wc-modal { 
+    padding: 20px; 
+  }
+  .team-detail-panel { 
+    padding: 18px; 
+  }
+  .stat-card .stat-number { 
+    font-size: 2rem; 
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ============================================
+   UTILITIES ADICIONALES
+   ============================================ */
+.text-gold {
+  color: var(--wc-gold);
+}
+
+.bg-gold {
+  background: var(--wc-gold);
+}
+
+.border-gold {
+  border-color: var(--wc-gold);
+}
